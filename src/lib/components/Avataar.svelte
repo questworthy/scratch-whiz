@@ -28,8 +28,10 @@
 	}}
 />
 
+<!--
 <p>{cursor.x}</p>
 <p>{cursor.y}</p>
+-->
 
 <button class="w-80 h-96 absolute left-16 bottom-16">
 	<svg
