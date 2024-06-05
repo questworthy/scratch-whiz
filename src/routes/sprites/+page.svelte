@@ -1,0 +1,1 @@
+<p>Sprites Page</p>
