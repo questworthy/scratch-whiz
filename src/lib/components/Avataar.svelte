@@ -17,6 +17,7 @@
 
 	export let smile = false;
 	export let bubble = false;
+	export let message = 'Hmm ...';
 
 	// transition ---------------------------------------------------------
 
@@ -47,9 +48,9 @@
 <p>{cursor.y}</p>
 -->
 
-<div class="m-4 relative left-4 bottom-0 flex">
+<div class="w-80 h-80 m-4 relative flex">
 	{#if hidden}
-		<button transition:scale={{ delay: 200, duration: 400, easing: cubicInOut }} class="w-80 h-96">
+		<button transition:scale={{ delay: 200, duration: 400, easing: cubicInOut }}>
 			<svg
 				role="img"
 				on:mouseenter={() => {
@@ -207,8 +208,7 @@
 			>
 				<img src="/speech-bubble.svg" alt="" />
 				<p class="w-80 absolute top-6 right-6 text-darkGreen text-xl">
-					Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint
-					consectetur cupidatat.
+					{message}
 				</p>
 			</div>
 		{/if}
