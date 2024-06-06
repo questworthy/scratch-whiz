@@ -1,24 +1,43 @@
 <script>
 	import Avataar from '$lib/components/Avataar.svelte';
+	export let hidden = false;
+
+	import { onMount } from 'svelte';
+	onMount(() => {
+		setTimeout(() => {
+			hidden = true;
+		}, 1000);
+	});
+
+	import { fly, scale } from 'svelte/transition';
+	import { backOut } from 'svelte/easing';
 </script>
 
 <div class="prose max-w-none mx-auto mt-60">
 	<div class="flex gap-20 justify-center items-center">
-		<div class="m-0">
-			<h1 class="text-6xl text-[#333333] leading-snug">
-				Become a<br />
-				<span class="px-6 text-[#333333] bg-lightAmber">Coding Whiz</span> !
-			</h1>
-			<p class="text-3xl">Drag and drop colorful blocks<br /> to build awesome games and apps.</p>
-			<a href="/toolkits">
-				<button
-					class="rounded-full px-8 py-6 font-bold uppercase bg-lightGreen text-darkGreen text-2xl hover:bg-[#fce2a1] transition-all duration-200 ease-in-out"
-					>Explore Toolkits</button
+		{#if hidden}
+			<div class="m-0">
+				<h1
+					transition:fly={{ y: 50, duration: 500, easing: backOut }}
+					class="text-6xl text-[#333333] leading-snug"
 				>
-			</a>
-		</div>
-		<div class="h-80 w-80">
-			<Avataar />
-		</div>
+					Become a<br />
+					<span class="px-6 text-[#333333] bg-lightAmber">Coding Whiz</span> !
+				</h1>
+				<p transition:fly={{ delay: 600, y: 50, duration: 500, easing: backOut }} class="text-3xl">
+					Drag and drop colorful blocks<br /> to build awesome games and apps.
+				</p>
+				<a href="/toolkits">
+					<button
+						transition:fly={{ delay: 1200, y: 50, duration: 500, easing: backOut }}
+						class="rounded-full px-8 py-6 font-bold uppercase bg-lightGreen text-darkGreen text-2xl hover:bg-[#fce2a1] transition-all duration-200 ease-in-out"
+						>Explore Toolkits</button
+					>
+				</a>
+			</div>
+			<div transition:scale={{ delay: 1800, duration: 500, easing: backOut }} class="h-80 w-80">
+				<Avataar />
+			</div>
+		{/if}
 	</div>
 </div>
