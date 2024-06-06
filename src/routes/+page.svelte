@@ -1,13 +1,35 @@
 <script>
-	import Banner from '$lib/components/Banner.svelte';
+	import Avataar from '$lib/components/Avataar.svelte';
 
 	const style =
 		'rounded-2xl px-6 py-4 flex flex-col justify-start drop-shadow-lg hover:scale-110 hover:-translate-y-8 hover:z-10 transition-all duration-200 ease-in-out cursor-pointer';
 </script>
 
-<Banner
-	src="/laptop.png"
-	firstLine="Become a"
-	secondLine="Coding Whiz !"
-	description="Drag and drop colorful blocks to build awesome games and apps."
-/>
+<Avataar />
+
+<div class="pt-40 max-w-screen-lg mx-auto flex flex-col justify-center items-center">
+	<h1 class="m-16 p-4 text-6xl text-gray-300 font-bold">Choose your adventure</h1>
+	<div class="flex gap-16 justify-center items-center">
+		<div>
+			<img
+				class="w-96 rounded-3xl shadow-md hover:scale-110 hover:rotate-3 transition-all duration-400 ease-in-out"
+				src="/equity.png"
+				alt=""
+			/>
+			<p class="m-8 p-2 text-4xl text-lightAmber text-center bg-slate-800 rounded-xl">
+				Gender Equity
+			</p>
+		</div>
+
+		<div>
+			<img
+				class="w-96 rounded-3xl shadow-md hover:scale-110 hover:rotate-3 transition-all duration-400 ease-in-out"
+				src="/scratch.png"
+				alt=""
+			/>
+			<p class="m-8 p-2 text-4xl text-lightGreen text-center bg-slate-800 rounded-xl">
+				Scratch Basics
+			</p>
+		</div>
+	</div>
+</div>

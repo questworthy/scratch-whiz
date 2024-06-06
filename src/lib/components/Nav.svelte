@@ -6,7 +6,7 @@
 	const links = ['home', 'gender', 'about'];
 </script>
 
-<div class="absolute w-screen h-32 bg-white drop-shadow-md flex justify-between items-center">
+<div class="fixed w-screen h-32 bg-white drop-shadow-md flex justify-between items-center">
 	<img class="h-32" src="/qa.svg" alt="Quest Alliance Logo" />
 	<div class="mx-8 flex">
 		{#each links as link}
