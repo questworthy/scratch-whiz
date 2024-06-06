@@ -25,12 +25,7 @@
 />
 
 <svg class="absolute opacity-40 -z-50" role="presentation" height="100%" width="100%">
-	<circle
-		class="fill-sky-400 active:fill-red-400 transition-colors duration-100 delay-100"
-		cx={$coords.x}
-		cy={$coords.y}
-		r={$size}
-	/>
+	<circle class="fill-amber-400" cx={$coords.x} cy={$coords.y} r={$size} />
 </svg>
 
 <Nav />
