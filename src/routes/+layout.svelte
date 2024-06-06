@@ -13,7 +13,7 @@
 		}
 	);
 
-	let size = spring(30);
+	let size = spring(20);
 </script>
 
 <svelte:window
@@ -21,7 +21,7 @@
 		coords.set({ x: e.clientX, y: e.clientY });
 	}}
 	on:mousedown={() => size.set(50)}
-	on:mouseup={() => size.set(30)}
+	on:mouseup={() => size.set(20)}
 />
 
 <svg class="absolute opacity-40 -z-50" role="presentation" height="100%" width="100%">

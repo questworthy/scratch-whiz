@@ -3,11 +3,13 @@
 
 	$: currentURL = $page.url.pathname;
 
-	const links = ['home', 'gender', 'about'];
+	const links = ['home', 'toolkits', 'about'];
 </script>
 
 <div class="w-full flex justify-between items-center">
-	<img class="h-32" src="/qa.svg" alt="Quest Alliance Logo" />
+	<a href="/">
+		<img class="h-32" src="/qa.svg" alt="Quest Alliance Logo" />
+	</a>
 	<div class="m-4 flex">
 		{#each links as link}
 			<a

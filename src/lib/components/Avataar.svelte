@@ -15,7 +15,8 @@
 	$: X = mapNumRange(cursor.x, innerWidth, 0, 20, -20);
 	$: Y = mapNumRange(cursor.y, innerWidth, 0, 20, -20);
 
-	let smile = false;
+	export let smile = false;
+	export let bubble = false;
 
 	// transition ---------------------------------------------------------
 
@@ -46,7 +47,7 @@
 <p>{cursor.y}</p>
 -->
 
-<div class="absolute left-4 bottom-0 flex">
+<div class="m-4 relative left-4 bottom-0 flex">
 	{#if hidden}
 		<button transition:scale={{ delay: 200, duration: 400, easing: cubicInOut }} class="w-80 h-96">
 			<svg
@@ -199,16 +200,17 @@
 				/></svg
 			>
 		</button>
-
-		<div
-			class="w-96 left-60 absolute"
-			transition:fly={{ x: -10, y: 10, delay: 2000, duration: 500, easing: cubicInOut }}
-		>
-			<img src="/speech-bubble.svg" alt="" />
-			<p class="w-80 absolute top-6 right-6 text-darkGreen text-xl">
-				Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur
-				cupidatat.
-			</p>
-		</div>
+		{#if bubble}
+			<div
+				class="w-96 left-60 absolute"
+				transition:fly={{ x: -10, y: 10, delay: 2000, duration: 500, easing: cubicInOut }}
+			>
+				<img src="/speech-bubble.svg" alt="" />
+				<p class="w-80 absolute top-6 right-6 text-darkGreen text-xl">
+					Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint
+					consectetur cupidatat.
+				</p>
+			</div>
+		{/if}
 	{/if}
 </div>
