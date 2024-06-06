@@ -8,8 +8,11 @@
 <Avataar />
 
 <div class="pt-40 max-w-screen-lg mx-auto flex flex-col justify-center items-center">
-	<h1 class="m-16 p-4 text-6xl text-gray-300 font-bold">Choose your adventure</h1>
-	<div class="flex gap-16 justify-center items-center">
+	<div class="m-14">
+		<h1 class="m- p-4 text-7xl text-gray-800 font-bold">Become a Coding Whiz !</h1>
+		<p class="p-4 text-2xl">Drag and drop colorful blocks to build awesome games and apps.</p>
+	</div>
+	<div class="my-8 flex gap-16 justify-center items-center">
 		<div>
 			<img
 				class="w-96 rounded-3xl shadow-md hover:scale-110 hover:rotate-3 transition-all duration-400 ease-in-out"
