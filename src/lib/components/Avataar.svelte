@@ -49,12 +49,6 @@
 			<svg
 				transition:scale={{ duration: 500, easing: backOut }}
 				role="img"
-				on:mouseenter={() => {
-					smile = true;
-				}}
-				on:mouseleave={() => {
-					smile = false;
-				}}
 				width="100%"
 				height="100%"
 				viewBox="0 0 1583.3509 1640.81"

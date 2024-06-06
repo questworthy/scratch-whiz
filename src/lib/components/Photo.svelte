@@ -2,9 +2,10 @@
 	export let src = '/equity.png';
 	export let alt = '';
 	export let color = '#333';
+	export let label = 'Caption';
 </script>
 
-<div class=" relative m-8">
+<div class="relative m-8">
 	<div class="absolute w-16 -top-4 -right-4">
 		<svg
 			width="100%"
@@ -23,7 +24,7 @@
 		</svg>
 	</div>
 
-	<img class="w-96 shadow-md" {src} {alt} />
+	<img class="w-96 hover:shadow-xl transition-all duration-200" {src} {alt} />
 
 	<div class="absolute w-16 -left-4 -bottom-4">
 		<svg
@@ -43,3 +44,4 @@
 		</svg>
 	</div>
 </div>
+<p class="m-8 p-4 text-3xl text-center text-stone-400 font-bold">{label}</p>

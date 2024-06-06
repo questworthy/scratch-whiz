@@ -1,5 +1,8 @@
 <script>
 	export let message = 'Hmm ...';
+	export let color = '#C9D990';
+	export let text = '#1C471F';
+
 	import { onMount } from 'svelte';
 
 	let hidden = false;
@@ -16,7 +19,8 @@
 <div class="p-2 m-2 w-80">
 	{#if hidden}
 		<p
-			class="p-8 rounded-3xl bg-lightGreen text-darkGreen text-xl font-bold"
+			style="background-color:{color}; color:{text};"
+			class="p-8 rounded-3xl text-xl font-bold"
 			transition:scale={{ duration: 500, easing: backOut }}
 		>
 			{message}
