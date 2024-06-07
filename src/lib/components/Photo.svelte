@@ -5,7 +5,7 @@
 	export let label = 'Caption';
 </script>
 
-<div class="relative m-8">
+<div class="relative">
 	<div class="absolute w-16 -top-4 -right-4">
 		<svg
 			width="100%"
@@ -44,4 +44,6 @@
 		</svg>
 	</div>
 </div>
-<p class="m-8 p-4 text-3xl text-center text-stone-400 font-bold">{label}</p>
+{#if label != ''}
+	<p class="m-4 p-4 text-3xl text-center text-stone-400 font-bold">{label}</p>
+{/if}

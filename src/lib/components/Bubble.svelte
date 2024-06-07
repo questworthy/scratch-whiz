@@ -20,7 +20,7 @@
 	{#if hidden}
 		<p
 			style="background-color:{color}; color:{text};"
-			class="p-8 rounded-3xl text-xl font-bold"
+			class="p-8 rounded-3xl text-xl"
 			transition:scale={{ duration: 500, easing: backOut }}
 		>
 			{message}
