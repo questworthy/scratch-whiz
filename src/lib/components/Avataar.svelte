@@ -44,7 +44,7 @@
 -->
 
 {#if hidden}
-	<div class="p-2 m-2 flex justify-center items-center">
+	<div class="flex justify-center items-center">
 		<button>
 			<svg
 				transition:scale={{ duration: 500, easing: backOut }}
