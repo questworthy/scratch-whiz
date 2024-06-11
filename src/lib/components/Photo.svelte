@@ -24,7 +24,7 @@
 		</svg>
 	</div>
 
-	<img class="w-96 hover:shadow-xl transition-all duration-200" {src} {alt} />
+	<img class="hover:shadow-xl transition-all duration-200" {src} {alt} />
 
 	<div class="absolute w-16 -left-4 -bottom-4">
 		<svg

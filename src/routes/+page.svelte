@@ -16,7 +16,7 @@
 
 <div class="flex justify-center items-start">
 	{#if hidden}
-		<div class="m-8 p-8 prose">
+		<div class="my-8 p-8 prose">
 			<h1
 				transition:fly={{ y: 50, duration: 500, easing: backOut }}
 				class="text-[#333333] leading-relaxed"
@@ -30,16 +30,26 @@
 				and drop colorful blocks to build games and bring your imagination to life.
 			</h2>
 
-			<button
-				transition:fly={{ delay: 1200, y: 50, duration: 500, easing: backOut }}
-				class="rounded-full my-8 p-4 bg-darkViolet text-xl text-bg font-bold shadow-md hover:scale-125 hover:rotate-3 hover:translate-x-2 hover:-translate-y-2 transition-all duration-200 ease-in-out"
+			<a
+				href="/toolkits"
+				on:mouseenter={() => {
+					smile = true;
+				}}
+				on:mouseleave={() => {
+					smile = false;
+				}}
 			>
-				Get Started 🔥
-			</button>
+				<button
+					transition:fly={{ delay: 1200, y: 50, duration: 500, easing: backOut }}
+					class="rounded-full my-8 p-4 bg-darkViolet text-xl text-bg font-bold shadow-md hover:scale-125 hover:rotate-3 hover:translate-x-2 hover:-translate-y-2 transition-all duration-200 ease-in-out"
+				>
+					Get Started 🔥
+				</button>
+			</a>
 		</div>
 		<div
 			transition:scale={{ delay: 1800, duration: 500, easing: backOut }}
-			class="w-80 h-80 m-8 p-8"
+			class="w-80 h-80 my-8 p-8"
 		>
 			<Avataar {smile} />
 		</div>
