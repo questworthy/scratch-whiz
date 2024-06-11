@@ -67,7 +67,7 @@
 							'Welcome to the "Gender Equity" toolkit ! Select a level to continue your journey !';
 						smile = false;
 					}}
-					href={'/gender/' + (index + 1)}
+					href={'/gender/level/' + (index + 1)}
 					class="m-4 p-8 flex flex-col gap-4 border-[#F7DED0] border-4 rounded-xl hover:bg-[#F7DED0] transition-all duration-200 text-center"
 				>
 					<p class="text-6xl text-darkAmber">
