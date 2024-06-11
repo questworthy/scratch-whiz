@@ -17,7 +17,7 @@
 	});
 </script>
 
-<div class="">
+<div class="border-b shadow">
 	{#if hidden}
 		<div
 			transition:fly={{ y: -50, duration: 500, easing: backOut }}

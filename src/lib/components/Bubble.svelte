@@ -16,11 +16,9 @@
 </script>
 
 {#if hidden}
-	<div in:fly={{ x: -50, y: 50, duration: 400, easing: backOut }}>
+	<div class="prose" in:fly={{ x: -50, y: 50, duration: 400, easing: backOut }}>
 		{#key message}
 			<p
-				style="background-color:{color};color:{text}"
-				class="w-80 m-4 p-4 rounded-2xl text-xl"
 				in:fly={{ x: -50, y: 50, duration: 200, delay: 300, easing: backOut }}
 				out:fly={{ x: 50, y: -50, duration: 200, easing: backOut }}
 			>

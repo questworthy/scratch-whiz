@@ -1,13 +1,8 @@
 <script>
-	import Avataar from '$lib/components/Avataar.svelte';
-	import Bubble from '$lib/components/Bubble.svelte';
-
 	let smile = false;
 
 	let message =
 		'Welcome to the "Gender Equity" toolkit ! Select a level to continue your journey !';
-	let color = '#C9D990';
-	let text = '#1C471F';
 
 	export let hidden = false;
 	import { onMount } from 'svelte';
@@ -20,46 +15,35 @@
 
 	import { fly } from 'svelte/transition';
 	import { backOut } from 'svelte/easing';
+	import Guide from '$lib/components/Guide.svelte';
 
-	let levels = {
-		gender: [
-			{ label: 'Gender stereotypes and roles I - School & households' },
-			{ label: 'Gender stereotypes and roles II - Career & Access' },
-			{ label: 'Know me and around me - Sex and Gender' },
-			{ label: 'Gender Identities and Sexualities' },
-			{ label: 'What can I do to change?' }
-		],
-		scratch: [
-			{ label: 'Gender stereotypes and roles I - School & households' },
-			{ label: 'Gender stereotypes and roles II - Career & Access' },
-			{ label: 'Know me and around me - Sex and Gender' },
-			{ label: 'Gender Identities and Sexualities' },
-			{ label: 'What can I do to change?' }
-		]
-	};
+	const levels = [
+		`level 1 : Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.`,
+		`level 2 : Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.`,
+		`level 3 : Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.`,
+		`level 4 : Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.`,
+		`level 5 : Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.`
+	];
+
+	let title = '🏆 Level Up !';
+	let instructions = levels[0];
+	let expression = false;
 </script>
 
-{#if hidden}
-	<h1
-		class="m-4 p-4 text-4xl text-center text-stone-400 font-bold"
-		transition:fly={{ y: 100, duration: 400, easing: backOut }}
-	>
-		🏆 Level Up !
-	</h1>
+<Guide {title} {expression} {instructions}>
 	<div class="mx-auto max-w-screen-md">
 		<div
 			class="mx-auto flex flex-wrap justify-center items-center"
 			transition:fly={{ y: 100, duration: 400, easing: backOut }}
 		>
-			{#each levels.gender as level, index}
+			{#each levels as level, index}
 				<a
 					on:mouseenter={() => {
-						message = level.label;
+						instructions = level;
 						smile = true;
 					}}
 					on:mouseleave={() => {
-						message =
-							'Welcome to the "Gender Equity" toolkit ! Select a level to continue your journey !';
+						instructions = `... hmmm`;
 						smile = false;
 					}}
 					href={'/gender/level/' + (index + 1)}
@@ -119,13 +103,4 @@
 			{/each}
 		</div>
 	</div>
-
-	<div class="fixed bottom-2 left-2 flex justify-start items-start">
-		<div class="h-60">
-			<Avataar {smile} />
-		</div>
-		<div class="h-60">
-			<Bubble {message} {color} {text} />
-		</div>
-	</div>
-{/if}
+</Guide>

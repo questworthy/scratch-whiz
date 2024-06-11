@@ -4,7 +4,9 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				comic: "'Comic Neue', cursive"
+				comic: "'Comic Neue', cursive",
+				overclock: "'Overclock', system-ui",
+				inter: "'Inter Variable', sans-serif"
 			},
 			colors: {
 				bg: '#fcfaf4',

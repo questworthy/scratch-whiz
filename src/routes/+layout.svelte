@@ -3,6 +3,13 @@
 	import '../app.css';
 	import '@fontsource/comic-neue'; // 400
 
+	import '@fontsource/overlock/400.css';
+	import '@fontsource/overlock/700.css';
+	import '@fontsource/overlock/900.css';
+
+	// Supports weights 100-900
+	import '@fontsource-variable/inter';
+
 	import { spring } from 'svelte/motion';
 
 	let coords = spring(

@@ -36,6 +36,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/comic-neue": "^5.0.12"
+		"@fontsource-variable/inter": "^5.0.18",
+		"@fontsource/comic-neue": "^5.0.12",
+		"@fontsource/overlock": "^5.0.20",
+		"svelte-markdown": "^0.4.1"
 	}
 }
