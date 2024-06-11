@@ -14,7 +14,7 @@
 	onMount(() => {
 		setTimeout(() => {
 			hidden = true;
-		}, 400);
+		}, 1000);
 		message = 'Welcome to the "Gender Equity" toolkit ! Select a level to continue your journey !';
 	});
 
@@ -39,21 +39,16 @@
 	};
 </script>
 
-<div class="flex absolute left-0 bottom-0">
-	<Avataar {smile} />
-	<Bubble {message} {color} {text} />
-</div>
-
-<div class="mt-40 flex flex-col justify-center items-center">
-	{#if hidden}
-		<p
-			transition:fly={{ y: 100, duration: 400, easing: backOut }}
-			class="m-4 p-4 text-5xl text-center text-stone-400 font-bold"
-		>
-			Level Up !
-		</p>
+{#if hidden}
+	<h1
+		class="m-4 p-4 text-4xl text-center text-stone-400 font-bold"
+		transition:fly={{ y: 100, duration: 400, easing: backOut }}
+	>
+		🏆 Level Up !
+	</h1>
+	<div class="mx-auto max-w-screen-md">
 		<div
-			class="flex flex-wrap w-[540px] justify-center"
+			class="mx-auto flex flex-wrap justify-center items-center"
 			transition:fly={{ y: 100, duration: 400, easing: backOut }}
 		>
 			{#each levels.gender as level, index}
@@ -68,7 +63,7 @@
 						smile = false;
 					}}
 					href={'/gender/level/' + (index + 1)}
-					class="m-4 p-8 flex flex-col gap-4 border-[#F7DED0] border-4 rounded-xl hover:bg-[#F7DED0] transition-all duration-200 text-center"
+					class="m-4 p-4 flex flex-col gap-4 border-[#F7DED0] border-4 rounded-xl hover:bg-[#F7DED0] transition-all duration-200 text-center"
 				>
 					<p class="text-6xl text-darkAmber">
 						{index + 1}
@@ -123,5 +118,14 @@
 				</a>
 			{/each}
 		</div>
-	{/if}
-</div>
+	</div>
+
+	<div class="fixed bottom-2 left-2 flex justify-start items-start">
+		<div class="h-60">
+			<Avataar {smile} />
+		</div>
+		<div class="h-60">
+			<Bubble {message} {color} {text} />
+		</div>
+	</div>
+{/if}

@@ -34,7 +34,7 @@
 
 <h1 class="m-4 p-4 text-4xl text-center text-stone-400 font-bold">🧭 Choose Your Adventure</h1>
 <div class="p-4 w-screen bg-[#efead6] shadow-inner">
-	<div class="m-4 p-4 mx-auto max-w-screen-md grid grid-cols-1 md:grid-cols-2 gap-8">
+	<div class="m-4 p-4 mx-auto max-w-screen-md grid grid-cols-1 md:grid-cols-2 gap-16">
 		{#each toolkits as toolkit}
 			<a href={toolkit.href}>
 				<div
