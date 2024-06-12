@@ -8,6 +8,7 @@
 
 	export let title = 'Page Name'; // SUGGESTION: use emojis ...
 	export let expression = false; // TODO: add jolly, sad & confused.
+	export let center = true; // TODO: add jolly, sad & confused.
 	export let instructions = `
 
 Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
@@ -44,9 +45,9 @@ Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint 
 			</div>
 		</div>
 
-		<div class="mx-auto max-w-screen-md">
+		<div class="mx-auto max-w-screen-md mb-32">
 			<h1
-				class="mx-4 mt-8 mb-16 p-4 text-4xl text-center text-stone-400 font-bold"
+				class="mx-4 my-8 p-4 text-4xl {center === true && 'text-center'} text-stone-400 font-bold"
 				transition:fly={{ y: 100, duration: 400, easing: backOut }}
 			>
 				{title}
