@@ -38,7 +38,7 @@ If you are completely new to Scratch, a block-based, interactive programming sof
 - [Scratch](youtube.com)
 	`;
 
-	const banner = ['We ', 'make ', 'the ', 'society ', 'better', ' !'];
+	const banner = ['🌟 ', 'We ', 'make ', 'the ', 'society ', 'better ', '! ', '🌟'];
 </script>
 
 <Guide {title} {expression} {instructions} center={false}>
@@ -57,17 +57,17 @@ But remember ...
 			`}
 		/>
 		<!-- TODO : replace image with svg -->
-		<div class="flex flex-wrap">
+		<div class="flex flex-wrap m-0">
 			{#each banner as letter}
 				<p
-					class="hover:text-red-400 cursor-pointer select-none h-20 p-1 text-4xl font-inter font-bold hover:scale-125 hover:-translate-y-8 transition-all duration-200"
+					class="hover:text-red-400 cursor-pointer select-none h-20 p-1 text-4xl font-inter fontbold hover:scale-125 hover:-translate-y-8 transition-all duration-200"
 				>
 					{letter}
 				</p>
 			{/each}
 		</div>
 		<a
-			href="/gender/level-1/step-3"
+			href="/gender/level-1/quiz"
 			on:mouseenter={() => {
 				expression = true;
 			}}

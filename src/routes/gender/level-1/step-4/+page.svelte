@@ -1,69 +1,66 @@
 <script>
-	import Avataar from '$lib/components/Avataar.svelte';
-	import Bubble from '$lib/components/Bubble.svelte';
-
-	let smile = false;
-
-	let message =
-		'Welcome to the "Gender Equity" toolkit ! Select a level to continue your journey !';
-	let color = '#C9D990';
-	let text = '#1C471F';
-
-	export let hidden = false;
+	import Guide from '$lib/components/Guide.svelte';
+	import SvelteMarkdown from 'svelte-markdown';
 	import { onMount } from 'svelte';
+
+	let online = false;
+	let hidden = false;
+
 	onMount(() => {
+		online = window.navigator.onLine;
 		setTimeout(() => {
 			hidden = true;
-		}, 400);
-		message = 'Hi there!';
+		}, 1000);
 	});
 
-	import { fly } from 'svelte/transition';
-	import { backOut } from 'svelte/easing';
-	import Radio from '$lib/components/Radio.svelte';
+	let title = 'Step 4️⃣ : Interview';
+	let instructions = `
+Do you know someone around you who has broken a gender stereotype?
+`;
+	let expression = false;
 
-	let bubble = true;
+	const intro = `
+Here is a video about a woman who challenged some stereotypes and rose above them. Meet Ms. Sujata Ramdorai  in the video Sujata Ramdorai and her tale of numbers
+	`;
 
-	let group = 1;
+	const end = `
+
+If you are completely new to Scratch, a block-based, interactive programming software, you might want to go through these resources first :
+
+- [What is Scratch?](youtube.com)
+- [Scratch](youtube.com)
+	`;
 </script>
 
-<div class="flex absolute left-0 bottom-0">
-	<div class="w-60">
-		<Avataar {smile} />
-	</div>
-	{#if bubble}
-		<Bubble {message} {color} {text} />
-	{/if}
-</div>
-
-<div class="prose mx-auto mt-40 flex flex-col justify-start items-start">
-	{#if hidden}
-		<p
-			transition:fly={{ y: 100, duration: 400, easing: backOut }}
-			class="text-5xl text-stone-400 font-bold"
-		>
-			Step 4
-		</p>
-		<p class="text-xl">What is a stereotype?</p>
-		<p>
-			Here is a video about a woman who challenged some stereotypes and rose above them. Meet Ms.
-			Sujata Ramdorai in the video Sujata Ramdorai and her tale of numbers
-		</p>
-
+<Guide {title} {expression} {instructions} center={false}>
+	<div class="mx-auto max-w-screen-md prose font-inter m-4 p-4">
+		<SvelteMarkdown source={intro} />
+		{#if online}
+			<iframe
+				width="560"
+				height="315"
+				src="https://www.youtube-nocookie.com/embed/--LI0ZRsglg?si=yPJPxYByrlyuhg-n"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+			></iframe>
+		{/if}
 		<a
-			href="/gender/level/3"
+			href="/gender/level-1/step-5"
 			on:mouseenter={() => {
-				smile = true;
+				expression = true;
 			}}
 			on:mouseleave={() => {
-				smile = false;
+				expression = false;
 			}}
 		>
 			<button
-				transition:fly={{ delay: 1200, y: 50, duration: 500, easing: backOut }}
-				class="rounded-full px-8 py-6 font-bold uppercase bg-lightGreen text-darkGreen text-2xl hover:bg-[#fce2a1] transition-all duration-200 ease-in-out"
-				>Next</button
+				class="rounded-full py-4 px-6 my-8 bg-gray-800 text-xl text-bg font-bold shadow-md hover:scale-125 hover:rotate-3 hover:translate-x-2 hover:-translate-y-2 transition-all duration-200 ease-in-out"
 			>
+				Next 🔥
+			</button>
 		</a>
-	{/if}
-</div>
+	</div>
+</Guide>
