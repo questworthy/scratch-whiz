@@ -1,97 +1,59 @@
 <script>
-	import Avataar from '$lib/components/Avataar.svelte';
-	import Bubble from '$lib/components/Bubble.svelte';
-
-	let smile = false;
-
-	let message =
-		'Welcome to the "Gender Equity" toolkit ! Select a level to continue your journey !';
-	let color = '#C9D990';
-	let text = '#1C471F';
-
-	export let hidden = false;
+	import Guide from '$lib/components/Guide.svelte';
+	import SvelteMarkdown from 'svelte-markdown';
 	import { onMount } from 'svelte';
+
+	let online = false;
+	let hidden = false;
+
 	onMount(() => {
+		online = window.navigator.onLine;
 		setTimeout(() => {
 			hidden = true;
-		}, 400);
-		message = 'Hi there!';
+		}, 1000);
 	});
 
-	import { fly } from 'svelte/transition';
-	import { backOut } from 'svelte/easing';
+	let title = 'Step 2️⃣ : Think';
+	let instructions = `Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.`;
+	let expression = false;
 
-	let bubble = true;
+	const intro = `
 
-	const questions = [
-		{
-			text: 'What were the most memorable parts of the story for you?',
-			color: '#C9D990'
-		},
+That story talked about several things. Here we shall reflect on the concepts you saw.
 
-		{
-			text: 'Is there any difference in the way boys and girls are given education in your community? If yes, what do you think is the reason for it?',
-			color: '#F682A5'
-		},
+1. What were the most memorable parts of the story for you?
+2. Is there any difference in the way boys and girls are given education in your community? If yes, what do you think is the reason for it?
+3. Do you think any one gender between male and female can be better at science, math, or at using technology? If yes, why do you think so?
+4. Now look inside, do you think you yourselves have been influenced by gender biases, differences, or stereotypes (we will discuss its meaning in detail soon)? Think of an instance when you stood up for or against such beliefs and share it with your friends!
 
-		{
-			text: 'Do you think any one gender between male and female can be better at science, maths, or at using technology? If yes, why do you think so?',
-			color: '#C3B2E7'
-		},
+	`;
 
-		{
-			text: 'Now look inside, do you think you yourselves have been influenced by gender biases, differences, or stereotypes (we will discuss its meaning in detail soon)? Think of an instance when you stood up for or against such beliefs and share it with your friends!',
-			color: '#F9A474'
-		}
-	];
+	const end = `
+
+If you are completely new to Scratch, a block-based, interactive programming software, you might want to go through these resources first :
+
+- [What is Scratch?](youtube.com)
+- [Scratch](youtube.com)
+	`;
 </script>
 
-<div class="flex absolute left-0 bottom-0">
-	<div class="w-60">
-		<Avataar {smile} />
-	</div>
-	{#if bubble}
-		<Bubble {message} {color} {text} />
-	{/if}
-</div>
-
-<div class="prose mx-auto mt-40 flex flex-col justify-start items-start">
-	{#if hidden}
-		<p
-			transition:fly={{ y: 100, duration: 400, easing: backOut }}
-			class="text-5xl text-stone-400 font-bold"
-		>
-			Step 2
-		</p>
-		<p class="text-xl">
-			That story talked about several things. Here we shall reflect on the concepts you saw.
-		</p>
-
-		<div
-			class="flex flex-col w-[540px]"
-			transition:fly={{ y: 100, duration: 400, easing: backOut }}
-		>
-			{#each questions as question}
-				<div style="background-color: {question.color};" class="m-2 px-4 py-2 rounded-xl bg-red-50">
-					<p>{question.text}</p>
-				</div>
-			{/each}
-		</div>
-
+<Guide {title} {expression} {instructions} center={false}>
+	<div class="mx-auto max-w-screen-md prose font-inter m-4 p-4">
+		<SvelteMarkdown source={intro} />
 		<a
-			href="/gender/level/3"
+			href="/gender/level-1/step-3"
 			on:mouseenter={() => {
-				smile = true;
+				expression = true;
 			}}
 			on:mouseleave={() => {
-				smile = false;
+				expression = false;
 			}}
 		>
 			<button
-				transition:fly={{ delay: 1200, y: 50, duration: 500, easing: backOut }}
-				class="rounded-full px-8 py-6 font-bold uppercase bg-lightGreen text-darkGreen text-2xl hover:bg-[#fce2a1] transition-all duration-200 ease-in-out"
-				>Next</button
+				class="rounded-full py-4 px-6 my-8 bg-gray-800 text-xl text-bg font-bold shadow-md hover:scale-125 hover:rotate-3 hover:translate-x-2 hover:-translate-y-2 transition-all duration-200 ease-in-out"
 			>
+				Next 🔥
+			</button>
 		</a>
-	{/if}
-</div>
+	</div>
+</Guide>

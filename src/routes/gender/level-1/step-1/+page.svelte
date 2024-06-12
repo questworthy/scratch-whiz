@@ -60,5 +60,20 @@ If you are completely new to Scratch, a block-based, interactive programming sof
 		{:else}
 			<SvelteMarkdown source={`Looks like you're offline. Open this file in scratch program.`} />
 		{/if}
+		<a
+			href="/gender/level-1/step-2"
+			on:mouseenter={() => {
+				expression = true;
+			}}
+			on:mouseleave={() => {
+				expression = false;
+			}}
+		>
+			<button
+				class="rounded-full py-4 px-6 my-8 bg-gray-800 text-xl text-bg font-bold shadow-md hover:scale-125 hover:rotate-3 hover:translate-x-2 hover:-translate-y-2 transition-all duration-200 ease-in-out"
+			>
+				Next 🔥
+			</button>
+		</a>
 	</div>
 </Guide>
