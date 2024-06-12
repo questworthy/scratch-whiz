@@ -46,7 +46,7 @@ Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint 
 
 		<div class="mx-auto max-w-screen-md">
 			<h1
-				class="m-4 p-4 text-4xl text-center text-stone-400 font-bold"
+				class="mx-4 mt-8 mb-16 p-4 text-4xl text-center text-stone-400 font-bold"
 				transition:fly={{ y: 100, duration: 400, easing: backOut }}
 			>
 				{title}

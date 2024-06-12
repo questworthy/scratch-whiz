@@ -19,7 +19,7 @@
 		<div class="my-8 p-8 prose">
 			<h1
 				transition:fly={{ y: 50, duration: 500, easing: backOut }}
-				class="text-[#333333] leading-relaxed"
+				class="text-[#333333] leading-relaxed font-inter text-6xl"
 			>
 				🌻 Welcome to the<br />
 				<span class="rounded-xl p-2 text-[#333333] bg-lightAmber">Scratch Toolkit !</span>

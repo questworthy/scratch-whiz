@@ -1,21 +1,15 @@
 <script>
-	let smile = false;
+	import { fly } from 'svelte/transition';
+	import { backOut } from 'svelte/easing';
+	import Guide from '$lib/components/Guide.svelte';
 
-	let message =
-		'Welcome to the "Gender Equity" toolkit ! Select a level to continue your journey !';
-
-	export let hidden = false;
+	let hidden = false;
 	import { onMount } from 'svelte';
 	onMount(() => {
 		setTimeout(() => {
 			hidden = true;
 		}, 1000);
-		message = 'Welcome to the "Gender Equity" toolkit ! Select a level to continue your journey !';
 	});
-
-	import { fly } from 'svelte/transition';
-	import { backOut } from 'svelte/easing';
-	import Guide from '$lib/components/Guide.svelte';
 
 	const levels = [
 		`level 1 : Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.`,
@@ -40,11 +34,11 @@
 				<a
 					on:mouseenter={() => {
 						instructions = level;
-						smile = true;
+						expression = true;
 					}}
 					on:mouseleave={() => {
 						instructions = `... hmmm`;
-						smile = false;
+						expression = false;
 					}}
 					href={'/gender/level/' + (index + 1)}
 					class="m-4 p-4 flex flex-col gap-4 border-[#F7DED0] border-4 rounded-xl hover:bg-[#F7DED0] transition-all duration-200 text-center"

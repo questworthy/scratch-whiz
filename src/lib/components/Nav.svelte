@@ -31,9 +31,9 @@
 					<a
 						href={link === 'home' ? '/' : '/' + link}
 						class="{currentURL === '/' && link === 'home'
-							? 'text-[#f79420]'
+							? 'bg-[#efead6] font-bold'
 							: currentURL.slice(1) === link &&
-								'text-[#f79420]'} p-2 m-2 text-xl text-[#0075bb] hover:text-[#f79420] font-bold transition-all duration-200 ease-in-out"
+								'bg-[#efead6] font-bold'} rounded-full px-4 py-2 m-2 text-xl text-stone-900 capitalize transition-all duration-200 ease-in-out"
 					>
 						{link}
 					</a>
