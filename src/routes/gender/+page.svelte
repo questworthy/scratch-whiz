@@ -40,7 +40,7 @@
 						instructions = `... hmmm`;
 						expression = false;
 					}}
-					href={'/gender/level/' + (index + 1)}
+					href={'/gender/level-' + (index + 1) + '/step-1'}
 					class="m-4 p-4 flex flex-col gap-4 border-[#F7DED0] border-4 rounded-xl hover:bg-[#F7DED0] transition-all duration-200 text-center"
 				>
 					<p class="text-6xl text-darkAmber">
